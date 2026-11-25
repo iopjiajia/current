@@ -1,0 +1,376 @@
+\documentclass[11pt,a4paper]{ctexart}
+
+\usepackage[margin=22mm,top=22mm,bottom=22mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,tabularx,array}
+\usepackage[labelsep=quad]{caption}
+\usepackage{enumitem}
+\usepackage{xcolor,tikz}
+\usepackage{fancyhdr}
+\usepackage[unicode,hidelinks]{hyperref}
+
+\setlength{\parskip}{3.5pt}
+\linespread{1.24}
+\renewcommand{\arraystretch}{1.26}
+
+\definecolor{ink}{HTML}{183B50}
+\definecolor{teal}{HTML}{007C79}
+\definecolor{muted}{HTML}{485C67}
+\definecolor{panel}{HTML}{EEF5F5}
+
+\hypersetup{
+  pdftitle={短带材四引线法临界电流测量材料与器材准备清单},
+  pdfsubject={依据 GB/T 41640—2022 整理的短带材平面压接测试准备清单}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{muted}短带材四引线法临界电流测量准备清单}
+\fancyhead[R]{\small\sffamily\color{muted}GB/T 41640—2022}
+\renewcommand{\headrulewidth}{.3pt}
+\fancyfoot[R]{\small\thepage}
+
+\newcommand{\Ic}{I_{\mathrm c}}
+\newcommand{\Ec}{E_{\mathrm c}}
+\newcommand{\Uc}{U_{\mathrm c}}
+\newcommand{\uV}{\mu\mathrm V}
+\newcommand{\chk}{\textcolor{teal}{$\square$}}
+\newcommand{\panelbox}[1]{%
+  \par\medskip\noindent\setlength{\fboxsep}{7pt}\colorbox{panel}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{\small #1}}%
+  \par\medskip}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\newlist{checklist}{itemize}{2}
+\setlist[checklist,1]{label=\chk, topsep=3pt, itemsep=4pt, parsep=0pt, leftmargin=1.8em}
+\setlist[checklist,2]{label=\textcolor{muted}{\textbullet}, topsep=2pt, itemsep=2pt, parsep=0pt, leftmargin=1.6em}
+\setlist[enumerate]{topsep=3pt, itemsep=4pt, parsep=0pt, leftmargin=2.0em}
+
+\begin{document}
+
+\noindent{\sffamily\bfseries\color{teal}实验准备清单}\par
+\vspace{.35em}
+\noindent{\sffamily\bfseries\LARGE\color{ink}短带材四引线法临界电流测量材料与器材准备清单}\par
+\vspace{.35em}
+\panelbox{%
+  \textbf{依据标准：}GB/T 41640—2022《临界电流测量 第二代高温超导长带临界电流及其沿长度方向均匀性测量》\\
+  \textbf{适用构型：}静态纯铜平面压接四引线法%
+}
+
+% =========================================================================
+\section{待测样品与前置核查材料}
+% =========================================================================
+
+\begin{checklist}
+\item \textbf{待测第二代高温超导（2G-HTS）短带材}
+  \begin{checklist}
+  \item \textbf{规格要求：}铜或铜合金封装带材；宽度 $2\text{--}15\,\mathrm{mm}$，厚度 $0.1\text{--}0.5\,\mathrm{mm}$；临界电流 $\Ic < 500\,\mathrm A$（若超过 $500\,\mathrm A$ 需更大恒流源并严格监控接触电阻与电源限压）；$n$ 值 $> 5$；液氮温度下过流能力 $\ge 1.5\,\Ic$。
+  \item \textbf{禁用项：}本方法\textbf{不适用于表面涂覆绝缘层}的超导带材。
+  \end{checklist}
+\end{checklist}
+
+% =========================================================================
+\section{四引线夹具与电极接触材料}
+% =========================================================================
+
+\begin{checklist}
+\item \textbf{纯铜电流引线电极（2 块）与纯铜电压引线电极（2 块）}
+  \begin{checklist}
+  \item 采用平面压接形式（与样带接触面为平面）；建议适当增大电流电极体积以增加热容，抑制局部温升。
+  \item 电极尺寸须满足几何下限：电流电极接触长度 $L_4 >$ 带材宽度，电流与电压电极最小间距 $L_3 \ge$ 带材宽度（如出现电流转移“爬坡”须进一步增大 $L_3$）。
+  \end{checklist}
+\item \textbf{铜编织带与铜编织套}
+  \begin{checklist}
+  \item \textbf{铜编织带：}用作大电流主引线，提升液氮中的散热效率。
+  \item \textbf{铜编织套：}垫装在电流压接电极与超导带材之间，增大有效通流接触面积、显著降低接触电阻并改善散热（见附录图~A.7、图~A.8）。
+  \end{checklist}
+\item \textbf{绝缘样品支架与可控压接施力机构（压头/压板）}
+  \begin{checklist}
+  \item 平直支撑超导带材并实现可靠电隔离。
+  \item 施压机构须能精确控制压紧力，保证纯铜电极与带材之间的\textbf{接触压强} $\le 35\,\mathrm{MPa}$，避免压伤或折弯带材。
+  \end{checklist}
+\item \textbf{细砂纸}
+  \begin{checklist}
+  \item 每次测试前用于打磨纯铜电流、电压电极接触表面，使其干净、光亮，以降低界面接触电阻。
+  \end{checklist}
+\item \textbf{电压测量引线}
+  \begin{checklist}
+  \item \textbf{主测压引线（1 对）：}连接两纯铜电压电极至纳伏表，测量测试段压降 $U$。
+  \item \textbf{接触电阻监测引线（2 对）：}分别接在左、右电流压接电极与紧邻电极内侧的带材表面，用于测量两端接触电阻与损耗功率（对应附录图~A.7 中的 $V_1, V_2$）。
+  \end{checklist}
+\end{checklist}
+
+% =========================================================================
+\section{低温冷却与干燥存放材料及设备}
+% =========================================================================
+
+\begin{checklist}
+\item \textbf{低温槽（液氮杜瓦，1 个）}
+  \begin{checklist}
+  \item 内外腔通常采用无磁不锈钢并填充隔热层，具备良好绝热与恒温性能。
+  \item 容积须能将整套四引线压接组件完全浸没，并保证{液氮液面高于组件最高点} $\ge 3\,\mathrm{cm}$；方便手动或自动补液（有条件宜配液面监测装置与底部内壁加热系统）。
+  \end{checklist}
+\item \textbf{液氮冷剂及补液转移用具}
+  \begin{checklist}
+  \item 满足一个标准大气压、稳定液氮浴（$76.5\,\mathrm K \le T \le 77.8\,\mathrm K$）测试需求。
+  \end{checklist}
+\item \textbf{低温温度探头（1 支）}
+  \begin{checklist}
+  \item 布置于带材测试段附近，实时测量并记录液氮冷剂温度。
+  \end{checklist}
+\item \textbf{控温烘干箱（1 台，控温范围 $50^\circ\mathrm C\text{--}150^\circ\mathrm C$）}
+  \begin{checklist}
+  \item 测前用于预热烘干带材，防止水汽进入液氮结冰影响通流；测后用于充分回温烘干，防止表面凝露。
+  \item \textbf{注意：}严禁使用热风枪、高温焊枪等不受控热源替代。
+  \end{checklist}
+\item \textbf{干燥存放盒 / 干燥柜}
+  \begin{checklist}
+  \item 测后存放带材，保证远离潮气、水分，且避免堆叠挤压、刮擦或过度弯折。
+  \end{checklist}
+\end{checklist}
+
+% =========================================================================
+\section{核心电测、采集与接触监控设备}
+% =========================================================================
+
+\begin{checklist}
+\item \textbf{直流恒流源（1 台）}
+  \begin{checklist}
+  \item 输出电流稳定性须{优于 $1\%$}，量程覆盖待测 $\Ic$ 及余量。
+  \item 支持{恒定速率升流}（$0 \to \Ic$ 耗时 $> 10\,\mathrm s$；未知 $\Ic$ 首测速率 $< 5\,\mathrm{A/s}$）或{升流-恒流-升流}模式（恒流点漂移 $< 1\%\,\Ic$）。
+  \item 具备{输出电压上限}调节功能及软件{截止电压}控制，用于保护电源免受高阻或断路冲击。
+  \end{checklist}
+\item \textbf{高分辨率纳伏表（1 台）}
+  \begin{checklist}
+  \item 分辨率须{达到 $1\,\mathrm{nV}$ 及以上}（附录评定示例采用 $10\,\mathrm{mV}$ 量程纳伏表），用于采集测试段电压 $U$。
+  \end{checklist}
+\item \textbf{四引线标准电阻（分流器）与数字万用表（若采用分流器法测电流）}
+  \begin{checklist}
+  \item 标准电阻精确度不低于 $0.5\%$（附录示例阻值 $0.25\,\mathrm{m}\Omega$），配合数字万用表（如 $100\,\mathrm{mV}$ 量程）精确测定输运电流 $I$。
+  \end{checklist}
+\item \textbf{接触电阻与电极温升监控组件}
+  \begin{checklist}
+  \item {接触电阻监测电压表（2 路或双通道采集，对应附录图~A.7 中的 $V_1, V_2$）：}用于测前自检与升流全程实时读取左、右电流压接处的接触压降，换算接触电阻与损耗功率。
+  \item {测温热电偶（安装于电流引线电极附近）：}监控接触电阻焦耳热引起的局部温升，\textbf{温升达到 $1\,\mathrm K$ 时须停止加电}（见标准第~6.3.1~节与附录~A.4.4）。
+  \end{checklist}
+\item \textbf{计算机、测试软件与控制总线接口}
+  \begin{checklist}
+  \item 用于自动控制升流、同步记录完整 $U\text{--}I$ 曲线及 $V_1, V_2$ 数据、计算 $\Ic$ 与 $n$ 值，并在接触异常或超温时及时降流停机。
+  \end{checklist}
+\end{checklist}
+
+% =========================================================================
+\section{计量与安全防护辅助工具}
+% =========================================================================
+
+\begin{checklist}
+\item \textbf{长度测量工具（游标卡尺或钢直尺）}
+  \begin{checklist}
+  \item 最小刻度须 $\le 1\,\mathrm{mm}$，用于精确量测电压引线间距 $L_2$ 及 $L_3, L_4, L_5$（直接影响判据电压 $\Uc = L_2 \Ec$ 与不确定度）。
+  \end{checklist}
+\item \textbf{低温与电气安全防护用品}
+  \begin{checklist}
+  \item 低温防冻手套、护目镜等（落实标准开篇“重要提示”的安全防护要求）。
+  \end{checklist}
+\end{checklist}
+
+\section{临界电流测量的仪器搭建}
+% =========================================================================
+
+完成上述器材核查后，按照“夹具装配 $\to$ 电路接线 $\to$ 低温浸没 $\to$ 联机自检”的顺序搭建短带材四引线平面压接测试系统，整套装置连接拓扑如图~\ref{fig:setup_build} 所示。
+
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[
+  x=0.96cm, y=0.88cm,
+  font=\small\sffamily,
+  power/.style={thick, ink},
+  volt/.style={semithick, teal},
+  mon/.style={semithick, muted},
+  dim/.style={thin, muted}
+]
+  % --- 低温槽外框与液氮浴 ---
+  \fill[teal!9] (-6.55, -3.35) rectangle (6.55, 0.30);
+  \draw[teal!70, dashed, semithick] (-6.55, 0.30) -- (6.55, 0.30);
+  \draw[ink!80, thick] (-6.63, 0.55) -- (-6.63, -3.43) -- (6.63, -3.43) -- (6.63, 0.55);
+  \node[text=teal!85!black] at (-5.60, -0.05) {\scriptsize 液氮浴};
+
+  % --- 液氮浸没深度标注 ---
+  \draw[dim, <->] (5.82, -1.25) -- (5.82, 0.30)
+    node[fill=teal!9, inner sep=1pt, midway, text=muted] {\scriptsize $\ge 3\,\mathrm{cm}$};
+
+  % --- 绝缘样品支架与超导带材 ---
+  \filldraw[fill=ink!12, draw=ink!70] (-5.40, -2.58) rectangle (5.40, -2.25);
+  \node[text=ink] at (0, -2.415) {\scriptsize 绝缘样品支架};
+  \filldraw[fill=teal!32, draw=teal!90!black] (-5.25, -2.25) rectangle (5.25, -2.05);
+  \node[text=teal!90!black] at (0, -1.78) {\scriptsize 超导带材};
+
+  % --- 铜编织套（垫于电流电极与带材之间）---
+  \filldraw[fill=orange!35, draw=orange!75!black] (-5.10, -2.05) rectangle (-3.70, -1.90);
+  \filldraw[fill=orange!35, draw=orange!75!black] ( 3.70, -2.05) rectangle ( 5.10, -1.90);
+  \node[text=orange!75!black] at (5.85, -2.28) {\scriptsize 铜编织套};
+  \draw[dim, ->] (5.38, -2.22) -- (5.12, -1.98);
+
+  % --- 左、右纯铜电流压接电极 (L4) ---
+  \filldraw[fill=ink!20, draw=ink] (-5.10, -1.90) rectangle (-3.70, -1.25);
+  \filldraw[fill=ink!20, draw=ink] ( 3.70, -1.90) rectangle ( 5.10, -1.25);
+  \node[text=ink] at (-4.40, -1.58) {\scriptsize 电流电极};
+  \node[text=ink] at ( 4.40, -1.58) {\scriptsize 电流电极};
+
+  % --- 左、右纯铜电压压接电极 (L5) ---
+  \filldraw[fill=teal!24, draw=teal] (-2.30, -2.05) rectangle (-1.80, -1.55);
+  \filldraw[fill=teal!24, draw=teal] ( 1.80, -2.05) rectangle ( 2.30, -1.55);
+  \node[text=teal] at (-1.35, -0.78) {\scriptsize 电压电极};
+  \draw[dim, ->] (-1.68, -0.92) -- (-1.98, -1.52);
+
+  % --- 测温热电偶与液氮温度探头 ---
+  \fill[orange!80!black] (-5.14, -1.55) circle (1.8pt);
+  \draw[dim] (-5.14, -1.55) -- (-5.65, -1.25);
+  \node[text=muted] at (-5.92, -1.10) {\scriptsize 热电偶};
+
+  \fill[orange!80!black] (5.14, -1.55) circle (1.8pt);
+  \draw[dim] (5.14, -1.55) -- (5.60, -1.55);
+  \node[text=muted] at (6.00, -1.55) {\scriptsize 热电偶};
+
+  \fill[teal!80!black] (1.25, -1.75) circle (1.8pt);
+  \draw[dim] (1.25, -1.75) -- (1.25, -0.45);
+  \node[text=muted] at (1.58, -0.32) {\scriptsize 温度探头};
+
+  % --- 四引线几何尺寸标注 (L4, L3, L5, L2) ---
+  \foreach \x in {-5.10, -3.70, -2.30, -1.80, 1.80} {
+    \draw[dim, dashed] (\x, -2.62) -- (\x, -3.06);
+  }
+  \draw[dim, <->] (-5.10, -2.92) -- (-3.70, -2.92)
+    node[fill=teal!9, inner sep=1pt, midway, text=ink] {\scriptsize $L_4$};
+  \draw[dim, <->] (-3.70, -2.92) -- (-2.30, -2.92)
+    node[fill=teal!9, inner sep=1pt, midway, text=ink] {\scriptsize $L_3$};
+  \draw[dim, <->] (-2.30, -2.92) -- (-1.80, -2.92);
+  \node[text=ink] at (-2.05, -3.18) {\scriptsize $L_5$};
+  \draw[dim, <->] (-1.80, -2.92) -- (1.80, -2.92)
+    node[fill=teal!9, inner sep=1.5pt, midway, text=ink] {\scriptsize 测试段 $L_2$};
+
+  % --- 主电流回路（顶部：直流恒流源 + 分流器与万用表）---
+  \filldraw[fill=panel, draw=ink, rounded corners=3pt, semithick]
+    (-3.45, 2.75) rectangle (-0.85, 3.55);
+  \node[text=ink, align=center] at (-2.15, 3.15) {直流恒流源};
+
+  \filldraw[fill=panel, draw=ink, rounded corners=3pt, semithick]
+    (0.65, 2.75) rectangle (3.45, 3.55);
+  \node[text=ink, align=center] at (2.05, 3.15)
+    {分流器与万用表\\[-2pt]\scriptsize (测输运电流 $I$)};
+
+  \draw[power] (-4.40, -1.25) -- (-4.40, 3.15) -- (-3.45, 3.15);
+  \draw[power, ->] (-0.85, 3.15) -- (0.65, 3.15) node[above, midway] {\scriptsize $I$};
+  \draw[power] (3.45, 3.15) -- (4.40, 3.15) -- (4.40, -1.25);
+
+  \node[text=ink] at (-5.65, 2.28) {\scriptsize 铜编织带引线};
+  \draw[dim, ->] (-4.92, 2.28) -- (-4.46, 2.28);
+
+  % --- 中部测量回路：纳伏表 U 与两端接触监测 V1、V2 ---
+  \filldraw[fill=panel, draw=teal, rounded corners=3pt, semithick]
+    (-1.15, 1.05) rectangle (1.15, 1.85);
+  \node[text=teal] at (0, 1.45) {纳伏表 ($U$)};
+
+  \draw[volt] (-2.05, -1.55) -- (-2.05, -1.15) -- (-0.09, -1.15) -- (-0.09, 1.05);
+  \draw[volt] ( 2.05, -1.55) -- ( 2.05, -1.15) -- ( 0.09, -1.15) -- ( 0.09, 1.05);
+  \draw[dim, ->] (-0.52, -0.05) -- (-0.14, -0.05);
+
+  % V1 接触监测
+  \node[draw=muted, circle, fill=white, inner sep=2.2pt, text=muted] (v1) at (-3.45, 1.45) {\scriptsize $V_1$};
+  \node[text=muted] at (-3.45, 2.02) {\scriptsize 接触监测};
+  \draw[mon] (v1.west) -- (-3.92, 1.45) -- (-3.92, -1.25);
+  \draw[mon] (v1.east) -- (-2.95, 1.45) -- (-2.95, -2.05);
+  \fill[muted] (-2.95, -2.05) circle (1.6pt);
+
+  % V2 接触监测
+  \node[draw=muted, circle, fill=white, inner sep=2.2pt, text=muted] (v2) at (3.45, 1.45) {\scriptsize $V_2$};
+  \node[text=muted] at (3.45, 2.02) {\scriptsize 接触监测};
+  \draw[mon] (v2.west) -- (2.95, 1.45) -- (2.95, -2.05);
+  \draw[mon] (v2.east) -- (3.92, 1.45) -- (3.92, -1.25);
+  \fill[muted] (2.95, -2.05) circle (1.6pt);
+\end{tikzpicture}
+\caption{短带材静态纯铜平面压接四引线临界电流测量系统搭建示意图。}
+\label{fig:setup_build}
+\end{figure}
+
+具体搭建步骤如下：
+
+\begin{enumerate}
+\item \textbf{电极表面处理与样品预干燥}
+  \begin{checklist}
+  \item 使用细砂纸将 2 块纯铜电流电极和 2 块纯铜电压电极的压接平面打磨至干净、光亮，清除氧化膜与污渍，并整理好铜编织套。
+  \item 将低温槽内水汽烘干；把待测短带材放入控温烘干箱（$50^\circ\mathrm C\text{--}150^\circ\mathrm C$）中预热烘干。
+  \end{checklist}
+
+\item \textbf{四引线平面压接夹具装配}
+  \begin{checklist}
+  \item 将烘干后的短带材平直放置于绝缘样品支架上，严禁折弯、扭曲或刮擦带材表面，并确认支架与电流回路可靠电隔离。
+  \item 按对称几何关系 $L = L_2 + 2L_5 + 2L_3 + 2L_4$ 依次定位外侧两电流电极与内侧两电压电极，满足 $L_4 >$ 带材宽度且 $L_3 \ge$ 带材宽度（以 $160\,\mathrm{mm}$ 短带材为例，可参考取 $L_4 = 30\,\mathrm{mm}$、$L_3 = 20\,\mathrm{mm}$、$L_5 = 5\,\mathrm{mm}$、$L_2 = 50\,\mathrm{mm}$）。
+  \item 在两电流电极压头与带材表面之间垫装铜编织套，随后均匀拧紧压接施力机构，严格控制纯铜电极与带材间的接触压强 $\le 35\,\mathrm{MPa}$。
+  \item 用钢直尺配游标卡尺（刻度 $\le 1\,\mathrm{mm}$）复核并记录实测的 $L_2, L_3, L_4, L_5$，供后续计算判据电压 $\Uc = L_2 \Ec$ 使用。
+  \end{checklist}
+
+\item \textbf{主电流与电流采样回路搭建}
+  \begin{checklist}
+  \item 使用截面积足够的铜编织带作为大电流主引线，将直流恒流源正、负输出端分别连接至左、右纯铜电流压头，大电流接线端子紧固防松动。
+  \item 将标准电阻串联接入主电流回路，并将数字万用表接至分流器的独立电位采样端。
+  \end{checklist}
+
+\item \textbf{电压采集与接触/温升监测回路搭建}
+  \begin{checklist}
+  \item \textbf{主测压回路：}将连接左、右纯铜电压电极的两根电压引线直接接入纳伏表输入端，保证接线极性正确、端子紧固接触良好。
+  \item \textbf{接触监测回路：}按“接触电阻的测量与监控方法”一节要求，在左、右电流压接端各自接入 $V_1, V_2$ 监测引线。
+  \item \textbf{温度监测布置：}在左、右电流引线电极附近各固定 1 支测温热电偶，在测试段 $L_2$ 附近布置 1 支低温温度探头。
+  \item \textbf{接地核查：}确认各仪器电源及测量端遵守单点参考地原则，避免形成地环路引入工频噪声；常温下先用万用表核实主回路、测压回路导通且对支架绝缘良好。
+  \end{checklist}
+
+\item \textbf{低温浸没冷却与计算机联机准备}
+  \begin{checklist}
+  \item 将装配并接线完成的四引线组件移至低温槽上方，先利用低温槽蒸发的冷氮气氛围短时预冷，再平稳浸入液氮浴，并补充液氮至液面高于组件最高点 $\ge 3\,\mathrm{cm}$。
+  \item 将直流恒流源、纳伏表、数字万用表及 $V_1, V_2$、测温通道通过控制总线接入计算机测试软件，设定好预设升流速率（未知 $\Ic$ 首测 $< 5\,\mathrm{A/s}$）、截止电压（$1.0\,\Uc\text{--}1.5\,\Uc$）及电极温升停机报警（$\Delta T \ge 1\,\mathrm K$）。
+  \item 静置等待 $3\text{--}5\,\mathrm{min}$ 待液氮液面平稳且实测浴温处于 $76.5\,\mathrm K \le T \le 77.8\,\mathrm K$ 区间后（单次复测浸没冷却不少于 $10\,\mathrm s$），完成小电流接触电阻自检与电源电压上限设定，即可正式开始升流测试。
+  \end{checklist}
+\end{enumerate}
+
+% =========================================================================
+\section{接触电阻的测量与监控方法（参照标准附录图 A.7）}
+% =========================================================================
+
+在正式通大电流测试前及升流全程中，通过测量两端电流压接处的接触电阻，可提前排查虚接打火、核算回路压降并设定合理的电源电压上限，从而保护直流恒流源与纯铜电极。
+
+\begin{enumerate}
+\item \textbf{压接端电压监测接线布置}
+  \begin{checklist}
+  \item 分别在左、右两个电流压接端接入电压测量装置 $V_1$ 和 $V_2$。
+  \item 每路电压表的{外侧引线}接在纯铜电流压头（或主电流引线根部）上；{内侧引线}直接压接或轻触在{紧靠电流电极内缘的超导带材表面}（位于电流电极与主测压电极之间）。
+  \item 在超导态下，该小段带材自身电阻为零，因此 $V_1, V_2$ 测得的电压即代表对应端“电流压头 $\to$ 铜编织套 $\to$ 接触界面 $\to$ 带材超导层”的真实接触压降。
+  \end{checklist}
+
+\item \textbf{通大电流前的小电流低温自检}
+  \begin{checklist}
+  \item 待整个四引线组件浸入液氮且液面与温度稳定后（$76.5\,\mathrm K \le T \le 77.8\,\mathrm K$），先向回路通入安全的小恒定电流（例如 $I_{\mathrm{test}} = 5\text{--}10\,\mathrm A$）。
+  \item 读取稳定的压降 $V_1, V_2$，分别计算左、右单端接触电阻 $R_{\mathrm{c},i}$：
+  \[
+    R_{\mathrm{c},i} = \frac{V_i}{I_{\mathrm{test}}} \quad (i = 1, 2)
+  \]
+
+  \item {异常排查：}若 $V_1$ 或 $V_2$ 数值跳动不稳或阻值明显偏大，说明压接面存在氧化层、结冰或未压紧，严禁升大电流；应断电回温烘干，重新用细砂纸打磨纯铜电极、整理铜编织套并重新压紧（保证压强 $\le 35\,\mathrm{MPa}$）。
+  \end{checklist}
+
+\item \textbf{电源安全电压上限核算}
+  \begin{checklist}
+  \item 结合测得的接触电阻与主铜引线电阻 $R_{\mathrm{lead}}$，预估达到目标最大电流 $I_{\max}$ 时的全回路正常总压降：
+  \[
+    U_{\mathrm{total}} \approx I_{\max} \cdot \left(R_{\mathrm{lead}} + R_{\mathrm{c},1} + R_{\mathrm{c},2}\right)
+  \]
+  \item 确认 $U_{\mathrm{total}}$ 在直流恒流源额定输出电压范围内，并将电源的输出电压上限设置在略高于 $U_{\mathrm{total}}$ 的安全值，防止带材过流熔断或失超瞬间产生高阻拉弧冲击电源。
+  \end{checklist}
+
+\item \textbf{升流过程实时监控}
+  \begin{checklist}
+  \item 正式升流测 $\Ic$ 时，持续监测 $V_1, V_2$ 及单端接触损耗功率 $P_i = V_i \cdot I$，并配合电极附近热电偶读数判断发热状态。
+  \item 正常状态下 $V_1, V_2$ 应随电流 $I$ 呈近似线性平稳增长；一旦出现曲线突然非线性上翘、剧烈抖动或电极温升接近 $1\,\mathrm K$，应立即停止升流并将电流平稳回零。
+  \end{checklist}
+\end{enumerate}
+
+\end{document}
